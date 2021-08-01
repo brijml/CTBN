@@ -4,15 +4,15 @@ This package can be used as a library to fit a `Conditional Tree Bayesian Networ
 
 The main module is the `CTBN` class. 
 
-1. Use the `fit()` method to fit the `CTBN` to your multi-class classification data [[1]](#1). This method generates an optimal `CTBN` which is an instance of [DirectedGraph]() using the Chu-Liu-Edmond's algorithm for finding a maximum spanning arborescence [[2]](#2).
+1. Use the `fit()` method to fit the `CTBN` to your multi-label classification data [[1]](#1). This method generates an optimal `CTBN` which is an instance of [DirectedGraph](https://github.com/brijml/CTBN/blob/main/src/graph_preliminaries.py) using the [Chu-Liu-Edmond's algorithm](https://github.com/brijml/CTBN/blob/main/src/msa.py) for finding a maximum spanning arborescence [[2]](#2).
 2. The `predict()` method returns the most likely assignment to the class variables along with the probability of the assignment. The predict method uses the junction tree algorithm[[3]](#3) to run the most likely explanation(MLE) query.
 
 ### Usage
 
-An example of using the package can be found in the jupyter notebook [here](https://google.com).
+An example of using the package can be found in the jupyter notebook [here](https://github.com/brijml/CTBN/blob/main/compare-multiclass-classifier.ipynb).
 
 ```
-# Assume you have a dataset X_train and Y_train which are numpy arrays
+# Import the CTBN class and assuming you have a dataset X_train and Y_train which are numpy arrays.
 model = CTBN()
 model.fit(X_train, Y_train)
 
@@ -21,7 +21,7 @@ model.fit(X_train, Y_train)
 
 #Get predictions and the probability of a prediction on a single sample
 #using the predict method. This method will in turn call the junction tree
-#algorithm to run the max-sum algorithm.
+#algorithm to run the max-sum algorithm on a test_sample.
 
 max_log_prob, max_assignment = model.predict(test_sample)
 ```
