@@ -2,6 +2,11 @@
 
 This package can be used as a library to fit a `Conditional Tree Bayesian Network (CTBN)`[[1]](#1).
 
+This package has been published to [pypi](https://pypi.org/project/CTBN/) and can be installed using pip
+```
+pip install CTBN
+```
+
 The main module is the `CTBN` class. 
 
 1. Use the `fit()` method to fit the `CTBN` to your multi-label classification data [[1]](#1). This method generates an optimal `CTBN` which is an instance of [DirectedGraph](https://github.com/brijml/CTBN/blob/main/src/graph_preliminaries.py) using the [Chu-Liu-Edmond's algorithm](https://github.com/brijml/CTBN/blob/main/src/msa.py) for finding a maximum spanning arborescence [[2]](#2).
@@ -13,6 +18,7 @@ An example of using the package can be found in the jupyter notebook [here](http
 
 ```
 # Import the CTBN class and assuming you have a dataset X_train and Y_train which are numpy arrays.
+from ctbn import CTBN
 model = CTBN()
 model.fit(X_train, Y_train)
 
