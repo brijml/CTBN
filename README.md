@@ -14,7 +14,7 @@ The main module is the `CTBN` class.
 
 ### Usage
 
-An example of using the package can be found in the jupyter notebook [here](https://github.com/brijml/CTBN/blob/main/compare-multiclass-classifier.ipynb).
+An example of using the package can be found in the jupyter notebook [here](https://github.com/brijml/CTBN/blob/main/compare-multi-label-classifiers.ipynb).
 
 ```
 # Import the CTBN class and assuming you have a dataset X_train and Y_train which are numpy arrays.
